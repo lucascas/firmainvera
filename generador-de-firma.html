@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>IGF</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        font-family: sans-serif;
+        background-color: hsl(0 0% 10%);
+      }
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: hsl(0 0% 10%);
+        color: hsl(0, 0%, 80%);
+      }
+      section {
+        width: max(min-content, 18rem);
+      }
+      h1 {
+        text-align: center;
+      }
+      article:nth-of-type(1) {
+        display: flex;
+        justify-content: center;
+      }
+      form {
+        width: max(80%, 4rem);
+        display: flex;
+        flex-direction: column;
+      }
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin: 0.5rem 0;
+        border: none;
+      }
+      input {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+      }
+      table {
+        width: 360px;
+        padding: 1rem;
+        background-color: hsl(0 0% 15%);
+        font-family: sans-serif;
+      }
+      img {
+        width: 120px;
+      }
+      p {
+        display: flex;
+        color: #fcfcfc;
+      }
+      span {
+        display: inline-block;
+        font-size: min(3vw, 14px);
+        text-wrap: nowrap;
+      }
+      .separator {
+        width: 100%;
+        height: 1px;
+        background-color: hsl(0, 0%, 80%);
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Generador de firma</h1>
+        <div class="separator"></div>
+        <article>
+          <form action="">
+            <fieldset>
+              <label for="name">Nombre y apellido</label>
+              <input
+                id="name"
+                type="text"
+                name=""
+                id=""
+              />
+            </fieldset>
+            <fieldset>
+              <label for="role">Puesto</label>
+              <input
+                id="role"
+                type="text"
+                name=""
+                id=""
+              />
+            </fieldset>
+          </form>
+        </article>
+        <div class="separator"></div>
+        <article>
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <img
+                    src="https://i.imgur.com/BmYlf7c.png"
+                    alt="invera-logo"
+                  />
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>
+                    <span
+                      id="name-span"
+                      style="margin-right: 4px; font-weight: 600"
+                      >Nombre completo</span
+                    >
+                    <span style="margin-right: 4px">|</span>
+                    <span id="role-span">Puesto</span>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+    <script>
+      const name = document.getElementById('name')
+      const role = document.getElementById('role')
+      const nameSpan = document.getElementById('name-span')
+      const roleSpan = document.getElementById('role-span')
+
+      name.addEventListener('input', () => {
+        nameSpan.textContent = name.value
+      })
+
+      role.addEventListener('input', () => {
+        roleSpan.textContent = role.value
+      })
+    </script>
+  </body>
+</html>
